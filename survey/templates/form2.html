@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Favourite Details{% endblock %}
+
+{% block content %}
+
+<h2>Favourite Details</h2>
+<p class="step">Step 2 of 4</p>
+
+<form method="POST">
+    {% csrf_token %}
+
+    <div class="form-group">
+        <label>Favourite Singer</label>
+        <input type="text" name="Fav_Singer" required>
+    </div>
+
+    <div class="form-group">
+        <label>Favourite Food</label>
+        <input type="text" name="Fav_Food" required>
+    </div>
+
+    <div class="form-group">
+        <label>Favourite Teacher</label>
+        <input type="text" name="Fav_Teacher" required>
+    </div>
+
+    <div class="form-group">
+        <label>Favourite Car</label>
+        <input type="text" name="Fav_Car" required>
+    </div>
+
+    <button type="submit">Next</button>
+</form>
+
+{% endblock %}

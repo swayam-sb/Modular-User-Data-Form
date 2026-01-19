@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}Survey Data{% endblock %}
+
+{% block content %}
+
+<h2>Survey Responses</h2>
+
+<h3 style="margin-top:25px;">Personal Details</h3>
+{% for d in Personal_Details %}
+    <div class="card" style="margin-bottom:15px;">
+        <p><strong>Name:</strong> {{ d.First_Name }} {{ d.Middle_Name }} {{ d.Last_Name }}</p>
+        <p><strong>Age:</strong> {{ d.Age }}</p>
+        <p><strong>Gender:</strong> {{ d.Gender }}</p>
+        <p><strong>Contact:</strong> {{ d.Contact_Number }}</p>
+        <p><strong>Email:</strong> {{ d.EMail_Address }}</p>
+    </div>
+{% empty %}
+    <p>No personal data available.</p>
+{% endfor %}
+
+<h3 style="margin-top:25px;">Favourite Details</h3>
+{% for d in Favourite_Details %}
+    <div class="card" style="margin-bottom:15px;">
+        <p><strong>Singer:</strong> {{ d.Fav_Singer }}</p>
+        <p><strong>Food:</strong> {{ d.Fav_Food }}</p>
+        <p><strong>Teacher:</strong> {{ d.Fav_Teacher }}</p>
+        <p><strong>Car:</strong> {{ d.Fav_Car }}</p>
+    </div>
+{% empty %}
+    <p>No favourite data available.</p>
+{% endfor %}
+
+<h3 style="margin-top:25px;">Address Details</h3>
+{% for d in Address_Details %}
+    <div class="card" style="margin-bottom:15px;">
+        <p>{{ d.Building_Name }}, {{ d.Room_Number }}</p>
+        <p>{{ d.Sector }}, {{ d.City }}</p>
+        <p>{{ d.Land_Mark }} - {{ d.Pincode }}</p>
+    </div>
+{% empty %}
+    <p>No address data available.</p>
+{% endfor %}
+
+<h3 style="margin-top:25px;">Skills Details</h3>
+{% for d in Skills_Details %}
+    <div class="card" style="margin-bottom:15px;">
+        <p><strong>Technical:</strong> {{ d.Tech_Skills }}</p>
+        <p><strong>Non-Technical:</strong> {{ d.Non_Tech_Skills }}</p>
+        <p><strong>Sports:</strong> {{ d.Sports_Skills }}</p>
+    </div>
+{% empty %}
+    <p>No skills data available.</p>
+{% endfor %}
+
+{% endblock %}

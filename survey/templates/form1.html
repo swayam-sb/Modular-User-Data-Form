@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}Personal Details{% endblock %}
+
+{% block content %}
+
+<h2>Personal Details</h2>
+<p class="step">Step 1 of 4</p>
+
+<form method="POST">
+    {% csrf_token %}
+
+    <div class="form-group">
+        <label>First Name</label>
+        <input type="text" name="First_Name" required>
+    </div>
+
+    <div class="form-group">
+        <label>Middle Name</label>
+        <input type="text" name="Middle_Name">
+    </div>
+
+    <div class="form-group">
+        <label>Last Name</label>
+        <input type="text" name="Last_Name" required>
+    </div>
+
+    <div class="form-group">
+        <label>Age</label>
+        <input type="number" name="Age" required>
+    </div>
+
+    <div class="form-group">
+        <label>Gender</label>
+        <div class="radio-group">
+            <label><input type="radio" name="Gender" value="Male" required> Male</label>
+            <label><input type="radio" name="Gender" value="Female"> Female</label>
+            <label><input type="radio" name="Gender" value="Other"> Other</label>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Contact Number</label>
+        <input type="number" name="Contact_Number" required>
+    </div>
+
+    <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" name="Email_Address" required>
+    </div>
+
+    <button type="submit">Next</button>
+</form>
+
+{% endblock %}

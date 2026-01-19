@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}Address Details{% endblock %}
+
+{% block content %}
+
+<h2>Address Details</h2>
+<p class="step">Step 3 of 4</p>
+
+<form method="POST">
+    {% csrf_token %}
+
+    <div class="form-group">
+        <label>Building / House Name</label>
+        <input type="text" name="Building_Name" required>
+    </div>
+
+    <div class="form-group">
+        <label>Room / Flat Number</label>
+        <input type="text" name="Room_Number" required>
+    </div>
+
+    <div class="form-group">
+        <label>Sector</label>
+        <input type="number" name="Sector" required>
+    </div>
+
+    <div class="form-group">
+        <label>City</label>
+        <input type="text" name="City" required>
+    </div>
+
+    <div class="form-group">
+        <label>Landmark</label>
+        <input type="text" name="Land_Mark">
+    </div>
+
+    <div class="form-group">
+        <label>Pincode</label>
+        <input type="number" name="Pincode" required>
+    </div>
+
+    <button type="submit">Next</button>
+</form>
+
+{% endblock %}

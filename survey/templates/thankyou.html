@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Thank You{% endblock %}
+
+{% block content %}
+
+<h2>Thank You!</h2>
+
+<p style="text-align:center; color:#cbd5f5; margin-bottom:25px;">
+    Your responses have been submitted successfully.
+</p>
+
+<form method="POST">
+    {% csrf_token %}
+    <button type="submit">Fill Another Survey</button>
+</form>
+
+{% endblock %}
